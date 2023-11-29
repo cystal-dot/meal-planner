@@ -1,19 +1,15 @@
 import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import { config } from "dotenv";
-config();
+import { getRecipes, getRecipeById } from "./api/recipes.js";
 
-const app = express();
-
-app.use(cors());
-app.use(bodyParser.json());
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+var app = express();
+var port = 3001;
+app.get("/", function (req, res) {
+  return res.send("Hello World!");
 });
 
-const PORT = process.env.PORT as unknown as number | 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get("/api/getRecipes", getRecipes);
+app.get("/api/getRecipeById/:id", getRecipeById);
+
+app.listen(port, function () {
+  return console.log(`Example app listening on port ${port}!`);
 });
