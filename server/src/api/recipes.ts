@@ -1,5 +1,5 @@
 import pool from "../db.js";
-import e, { Request, Response } from "express";
+import { Request, Response } from "express";
 
 const errorMessage = "サーバーエラー";
 
