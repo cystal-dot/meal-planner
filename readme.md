@@ -10,4 +10,8 @@ tsc
 node dist/index.js
 ```
 
-TODO:いい感じに `npm run`できるようにする
+上 2 つをまとめて
+
+```
+npm run dev
+```
