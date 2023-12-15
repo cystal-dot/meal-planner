@@ -4,7 +4,7 @@ export type Recipe = {
   recipe_name: string;
   description: string;
   cooking_time: number;
-  created_at: string;
-  updated_at: string;
+  created_at: Date;
+  updated_at: Date;
   ingredients: string;
 };
