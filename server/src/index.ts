@@ -5,6 +5,7 @@ import {
   createRecipe,
   updateRecipe,
 } from "./api/recipes.js";
+import { createFavorite } from "./api/users.js";
 import bodyParser from "body-parser";
 
 var app = express();
@@ -24,6 +25,9 @@ app.get("/api/getRecipeById/:id", getRecipeById);
 app.post("/api/createRecipe", createRecipe);
 // レシピ更新
 app.put("/api/updateRecipe", updateRecipe);
+
+// お気に入り登録API
+app.post("/api/createFavorite", createFavorite);
 
 app.listen(port, function () {
   return console.log(`Example app listening on port ${port}!`);
