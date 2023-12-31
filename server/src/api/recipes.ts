@@ -4,6 +4,7 @@ import { Recipe } from "../model/recipe.js";
 import { errorMessage } from "../common/const.js";
 
 // レシピ一覧を取得する
+// curl http://localhost:3001/api/getRecipes
 export async function getRecipes(_req: Request, res: Response) {
   try {
     const { rows } = await pool.query("SELECT * FROM recipes");
@@ -17,6 +18,7 @@ export async function getRecipes(_req: Request, res: Response) {
 // レシピをIDで取得する
 // 複数のIDでも取得を可能に(例: /api/getRecipeById/1-2-3)
 // TODO:他のカラムの情報でも取得できるようにする
+// curl http://localhost:3001/api/getRecipeById/1-2
 export async function getRecipeById(req: Request, res: Response) {
   try {
     const ids = req.params.id.split("-");
