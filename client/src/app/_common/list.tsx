@@ -38,7 +38,7 @@ const products = [
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
   },
   {
-    id: 4,
+    id: 5,
     name: "Machined Mechanical Pencil",
     href: "#",
     price: "$35",
